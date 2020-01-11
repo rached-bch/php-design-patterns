@@ -35,6 +35,12 @@ class HomeController extends AbstractController
         $extraBedDecorator = new Dp\Decorator\ExtraBedDecorator($roomBooking);
         dump("extra bed room price", $extraBedDecorator->calculatePrice());
         ################### decorator >>
+        ################### adapter <<
+        $paperBook = new Dp\AdapterWrapper\PaperBook();
+        $kindleEbook = new Dp\AdapterWrapper\KindleEbook();
+        $kidleBookAdaptedForPaper = new Dp\AdapterWrapper\EbookAdapter($kindleEbook);
+        dump("name :", $kidleBookAdaptedForPaper->getName(), "turn page ebook :", $kidleBookAdaptedForPaper->turnPage());
+        ################### adapter >>
         $posts = $postRepository->findAll();
 
         return [
