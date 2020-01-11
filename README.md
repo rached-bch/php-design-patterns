@@ -1,1 +1,1 @@
-# Stater project with symfony nginx php mysql phpmyadmin
+# Examples of common used design patterns with php
